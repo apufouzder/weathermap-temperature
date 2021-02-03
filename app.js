@@ -25,5 +25,5 @@ function getWeatherTemp(){
             // console.log(temp);
             
         })
-        .catch(error => alert('You type wrung city!'))
+        .catch(error => alert('You type wrong city. Please try again!'))
 }
