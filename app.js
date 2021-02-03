@@ -1,7 +1,9 @@
 const inputValue = document.getElementById("input-value");
-const button = document.getElementById("button");
+document.getElementById("button").addEventListener("click", function(){
+    getWeatherTemp();
+})
 
-button.addEventListener("click", function () {
+function getWeatherTemp(){
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + inputValue.value + '&appid=5954da92492accf59925801ff9ea7014')
         .then(res => res.json())
         .then(data => {
@@ -9,9 +11,14 @@ button.addEventListener("click", function () {
             const main = data.main;
             const temp = main.temp;
 
+            let inputValue = document.getElementById("input-value").value;
+            inputValue = document.getElementById("input-value").value = "";
+
+            inputValue.value = "";
             document.getElementById("temp").innerText = temp;
-            console.log(data);
-            console.log(temp);
+            document.getElementById("city-name").innerText = nameValue;
+            // console.log(data);
+            // console.log(temp);
         })
         .catch(error => alert('You type wrung city!'))
-})
+}
