@@ -18,7 +18,10 @@ function getWeatherTemp(){
             document.getElementById("temp").innerText = temp;
             document.getElementById("city-name").innerText = nameValue;
             document.getElementById("weather-icon").setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
-            //console.log(data);
+
+            const mainInfo = `${data.weather[0].main}`;
+            document.getElementById("main-info").innerText = mainInfo;
+            // console.log(data);
             // console.log(temp);
             
         })
