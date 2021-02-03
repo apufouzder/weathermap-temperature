@@ -17,8 +17,10 @@ function getWeatherTemp(){
             inputValue.value = "";
             document.getElementById("temp").innerText = temp;
             document.getElementById("city-name").innerText = nameValue;
-            // console.log(data);
+            document.getElementById("weather-icon").setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
+            //console.log(data);
             // console.log(temp);
+            
         })
         .catch(error => alert('You type wrung city!'))
 }
