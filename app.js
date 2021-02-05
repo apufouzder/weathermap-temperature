@@ -10,12 +10,13 @@ function getWeatherTemp(){
             const nameValue = data.name;
             const main = data.main;
             const temp = main.temp;
+            const result = Math.round(temp - 273.15 );
 
             let inputValue = document.getElementById("input-value").value;
             inputValue = document.getElementById("input-value").value = "";
 
             inputValue.value = "";
-            document.getElementById("temp").innerText = temp;
+            document.getElementById("temp").innerText = result;
             document.getElementById("city-name").innerText = nameValue;
             document.getElementById("weather-icon").setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
 
